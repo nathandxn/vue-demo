@@ -8,9 +8,13 @@
     <script src="https://unpkg.com/vue@3"></script>
 </head>
 <body>
-    <div class="containter">
+    <div id="content" class="containter">
         <h1>Vue Demo</h1>
         <p>Hello World</p>
     </div>
+
+    <script>
+        Vue.createApp().mount('#content');
+    </script>
 </body>
 </html>
