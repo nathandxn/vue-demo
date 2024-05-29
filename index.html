@@ -13,10 +13,10 @@
             <a class="navbar-brand" href="#">Mon Vue</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="#">{{links[0]}}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">About</a>
+                    <a class="nav-link" aria-current="page" href="#">{{links[1]}}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#">Contact</a>
@@ -33,7 +33,7 @@
         Vue.createApp({
             data() {
                 return {
-                    links: ['Home', 'About', 'Contact']
+                    links: ['Accueil', 'À propos', 'Contact']
                 };
             }
         }).mount('nav');
