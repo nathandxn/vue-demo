@@ -33,6 +33,13 @@
         Vue.createApp({
             data() {
                 return {
+                    links: ['Home', 'About', 'Contact']
+                };
+            }
+        }).mount('nav');
+        Vue.createApp({
+            data() {
+                return {
                     pageTitle: 'Bonjour, Vue',
                     content: 'Bienvenue dans le merveilleux monde de Vue'
                 };
