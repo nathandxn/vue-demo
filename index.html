@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg"
-        :class="navbarClasses"
+        :class="[`navbar-${theme}`, `bg-${theme}`, `navbar`, `navbar-expand-lg`]"
     >
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Mon Vue</a>
@@ -30,7 +30,7 @@
             <form class="d-flex">
                 <button 
                     class="btn btn-primary"
-                    @click.prevent="useDarkNavbar = !useDarkNavbar"
+                    @click.prevent="changeTheme"
                 >Activer le mode sombre</button>
             </form>
         </div>
@@ -45,7 +45,7 @@
             data() {
                 return {
                     activePage: 0,
-                    useDarkNavbar: false,
+                    theme: 'light',
                     pages: [
                         {
                             link: {text: "Accueil", url: "index.html"},
@@ -65,14 +65,14 @@
                     ]
                 };
             },
-            computed: {
-                navbarClasses() {
-                    return {
-                        'navbar-light': !this.useDarkNavbar,
-                        'bg-light': !this.useDarkNavbar,
-                        'navbar-dark': this.useDarkNavbar,
-                        'bg-dark': this.useDarkNavbar
+            methods: {
+                changeTheme() {
+                    let theme = 'light';
+
+                    if (this.theme == 'light') {
+                        theme = 'dark';
                     }
+                    this.theme = theme;
                 }
             }
             }).mount('body');
