@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg"
-        :class="{'navbar-light bg-light': !useDarkNavbar, 'navbar-dark bg-dark': useDarkNavbar}"
+        :class="navbarClasses"
     >
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Mon Vue</a>
@@ -64,6 +64,16 @@
                         }
                     ]
                 };
+            },
+            computed: {
+                navbarClasses() {
+                    return {
+                        'navbar-light': !this.useDarkNavbar,
+                        'bg-light': !this.useDarkNavbar,
+                        'navbar-dark': this.useDarkNavbar,
+                        'bg-dark': this.useDarkNavbar
+                    }
+                }
             }
             }).mount('body');
     </script>
