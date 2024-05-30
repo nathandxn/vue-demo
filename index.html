@@ -12,12 +12,13 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Mon Vue</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li v-for="(page, index) in links" class="nav-item" :key="index">
+                <li v-for="(page, index) in pages" class="nav-item" :key="index">
                     <a 
                         class="nav-link" 
                         aria-current="page" 
                         :href="page.link.url"
                         :title="page.link.pageTitle"
+                        @click="activePage = index"
                         >
                         {{page.link.text }}
                     </a>
@@ -26,14 +27,15 @@
         </div>
     </nav>
     <div id="content" class="containter">
-        <h1>{{ pageTitle }}</h1>
-        <p>{{ content }}</p>
+        <h1>{{ pages[activePage].pageTitle }}</h1>
+        <p>{{ pages[activePage].content }}</p>
     </div>
 
     <script>
         Vue.createApp({
             data() {
                 return {
+                    activePage: 0,
                     pages: [
                         {
                             link: {text: "Accueil", url: "index.html"},
