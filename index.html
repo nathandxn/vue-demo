@@ -18,7 +18,7 @@
                         aria-current="page" 
                         :href="page.link.url"
                         :title="page.link.pageTitle"
-                        @click="activePage = index"
+                        @click.prevent="activePage = index"
                         >
                         {{page.link.text }}
                     </a>
