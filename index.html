@@ -38,18 +38,12 @@
                         {text: 'Accueil', url: 'home.html'}, 
                         {text: 'À propos', url: 'about.html'}, 
                         {text: 'Contact', url: 'contact.html'}
-                    ]
-                };
-            }
-        }).mount('nav');
-        Vue.createApp({
-            data() {
-                return {
+                    ],
                     pageTitle: 'Bonjour, Vue',
                     content: 'Bienvenue dans le merveilleux monde de Vue'
                 };
             }
-            }).mount('#content');
+            }).mount('body');
     </script>
 </body>
 </html>
